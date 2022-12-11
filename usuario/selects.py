@@ -3,9 +3,11 @@ def buscar_usuarios(session):
 
     print('Listagem dos usuarios...')
 
-    for r in resultados:
+    #element_id='4:d2df805d-d9e6-4b49-b561-09e27e7ea834:15'
 
-        print(f'id: {r[0].element_id[-2::]}')
+    for r in resultados:
+        id = r[0].element_id.split(":")
+        print(f'id: {id[2]}')
         print('nome: {nome}'.format(nome=r[0]._properties['nome']))
         print('email: {email}'.format(email=r[0]._properties['email']))
         print('cpf: {cpf}'.format(cpf=r[0]._properties['cpf']))

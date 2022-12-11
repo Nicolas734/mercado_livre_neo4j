@@ -10,6 +10,5 @@ def inserir_usuario(session):
 
     query = 'CREATE (u:Usuario{ nome: "' + nome +'", email: "' + email + '", cpf: "' + cpf + '", rg: "' + rg + '", data_nascimento:"' + data_nascimento + '", telefone:"' + telefone + '", endereco:"' + endereco + '" })'
     session.run(query)
-    session.close()
 
     print('\nUsuario cadastrado com sucesso.')
