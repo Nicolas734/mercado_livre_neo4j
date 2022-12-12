@@ -8,9 +8,9 @@ def excluir_vendedor(session):
         print('Nome: ' + vendedor._properties['nome'])
         print('Email: ' + vendedor._properties['email'])
 
-        id_vendedor = input(str("Digite o id do vendedor que deseja excluir: "))
+    id_vendedor = input(str("Digite o id do vendedor que deseja excluir: "))
 
-    query = f'MATCH (v:Vendedor)-[c:Compra]->(p:Produto) WHERE ID(v) = {id_vendedor} DELETE c'
+    query = f'MATCH (v:Vendedor) WHERE ID(v) = {id_vendedor} DETACH DELETE v'
 
     session.run(query)
 

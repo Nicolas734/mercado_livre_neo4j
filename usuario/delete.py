@@ -4,7 +4,6 @@ def excluir_usuario(session):
 
     for u in lista_usuarios:
         usuario = u.value()
-
         print(f'\nid: {usuario.element_id.split(":")[2]}')
         print('Nome: {nome}'.format(nome = usuario._properties['nome']))
         print('Email: {email}'.format(email = usuario._properties['email']))
