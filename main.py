@@ -13,6 +13,7 @@ from vendedor.delete import excluir_vendedor
 from produto.inserts import inserir_produto
 from produto.selects import buscar_produtos
 from produto.update import atualizar_produto
+from produto.delete import excluir_produto
 
 from compra.inserts import inserir_compra
 from compra.selects import buscar_compras
@@ -45,6 +46,7 @@ while execucao:
 [11] atualizar produto
 [12] excluir usuario
 [13] excluir vendedor
+[14] excluir produto
 [0] Sair
 ''')
 
@@ -77,6 +79,8 @@ while execucao:
             excluir_usuario(session)
         case 13:
             excluir_vendedor(session)
+        case 14:
+            excluir_produto(session)
         case 0:
             execucao = False
             break
