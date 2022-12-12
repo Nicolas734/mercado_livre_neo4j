@@ -7,6 +7,8 @@ from vendedor.inserts import inserir_vendedor
 
 from produto.inserts import inserir_produto
 
+from compra.inserts import inserir_compra
+
 uri = "neo4j+s://6267f122.databases.neo4j.io"
 user = "neo4j"
 password = "yzfy4-MPE6IQm3ezIAxSttVuEGeZbU8IqphvqLTinEk"
@@ -26,6 +28,7 @@ while execucao:
 [2] cadastrar usuario
 [3] cadastrar vendedor
 [4] cadastrar produto
+[5] cadastrar compra
 [0] Sair
 ''')
 
@@ -40,6 +43,8 @@ while execucao:
             inserir_vendedor(session)
         case 4:
             inserir_produto(session)
+        case 5:
+            inserir_compra(session)
         case 0:
             execucao = False
             break
