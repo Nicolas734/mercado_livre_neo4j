@@ -12,4 +12,3 @@ def buscar_vendedores(session):
         print('Cnpj: ' + vendedor._properties['cnpj'])
         print('Telefone: ' + vendedor._properties['telefone'])
         print('Data de cadastro: ' + vendedor._properties['data_cadastro'])
-

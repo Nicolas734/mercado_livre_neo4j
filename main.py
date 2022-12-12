@@ -2,19 +2,22 @@ from neo4j import GraphDatabase
 
 from usuario.selects import buscar_usuarios
 from usuario.inserts import inserir_usuario
+from usuario.update import atualizar_usuario
 
 from vendedor.inserts import inserir_vendedor
 from vendedor.selects import buscar_vendedores
+from vendedor.update import atualizar_vendedor
 
 from produto.inserts import inserir_produto
 from produto.selects import buscar_produtos
+from produto.update import atualizar_produto
 
 from compra.inserts import inserir_compra
 from compra.selects import buscar_compras
 
-uri = "neo4j+s://6267f122.databases.neo4j.io"
+uri = "neo4j+s://c5e4de7a.databases.neo4j.io"
 user = "neo4j"
-password = "yzfy4-MPE6IQm3ezIAxSttVuEGeZbU8IqphvqLTinEk"
+password = "4LPL3ZekXAfhwKOUe8QzZd-LveQm_mvNhqjEPIVJalI"
 
 try:
     driver = GraphDatabase.driver(uri, auth=(user, password))
@@ -35,6 +38,9 @@ while execucao:
 [6] buscar vendedores
 [7] buscar produtos
 [8] buscar compras
+[9] atualizar usuario
+[10] atualizar vendedor
+[11] atualizar produto
 [0] Sair
 ''')
 
@@ -57,6 +63,12 @@ while execucao:
             buscar_produtos(session)
         case 8:
             buscar_compras(session)
+        case 9:
+            atualizar_usuario(session)
+        case 10:
+            atualizar_vendedor(session)
+        case 11:
+            atualizar_produto(session)
         case 0:
             execucao = False
             break

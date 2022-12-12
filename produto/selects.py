@@ -7,6 +7,7 @@ def buscar_produtos(session):
     for p in lista_produtos:
         produto = p.value()
         print("\nid: "+ produto.element_id.split(":")[2])
+        print("Codigo de identificação do produto: " + produto._properties['codigo_identificacao'])
         print("Nome: "+ produto._properties['nome'])
         print("Descricao: "+ produto._properties['descricao'])
         print("Preço: "+ produto._properties['preco'])
