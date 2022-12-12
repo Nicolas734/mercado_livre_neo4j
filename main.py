@@ -4,10 +4,13 @@ from usuario.selects import buscar_usuarios
 from usuario.inserts import inserir_usuario
 
 from vendedor.inserts import inserir_vendedor
+from vendedor.selects import buscar_vendedores
 
 from produto.inserts import inserir_produto
+from produto.selects import buscar_produtos
 
 from compra.inserts import inserir_compra
+from compra.selects import buscar_compras
 
 uri = "neo4j+s://6267f122.databases.neo4j.io"
 user = "neo4j"
@@ -29,6 +32,9 @@ while execucao:
 [3] cadastrar vendedor
 [4] cadastrar produto
 [5] cadastrar compra
+[6] buscar vendedores
+[7] buscar produtos
+[8] buscar compras
 [0] Sair
 ''')
 
@@ -45,6 +51,12 @@ while execucao:
             inserir_produto(session)
         case 5:
             inserir_compra(session)
+        case 6:
+            buscar_vendedores(session)
+        case 7:
+            buscar_produtos(session)
+        case 8:
+            buscar_compras(session)
         case 0:
             execucao = False
             break
