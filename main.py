@@ -3,10 +3,12 @@ from neo4j import GraphDatabase
 from usuario.selects import buscar_usuarios
 from usuario.inserts import inserir_usuario
 from usuario.update import atualizar_usuario
+from usuario.delete import excluir_usuario
 
 from vendedor.inserts import inserir_vendedor
 from vendedor.selects import buscar_vendedores
 from vendedor.update import atualizar_vendedor
+from vendedor.delete import excluir_vendedor
 
 from produto.inserts import inserir_produto
 from produto.selects import buscar_produtos
@@ -41,6 +43,8 @@ while execucao:
 [9] atualizar usuario
 [10] atualizar vendedor
 [11] atualizar produto
+[12] excluir usuario
+[13] excluir vendedor
 [0] Sair
 ''')
 
@@ -69,6 +73,10 @@ while execucao:
             atualizar_vendedor(session)
         case 11:
             atualizar_produto(session)
+        case 12:
+            excluir_usuario(session)
+        case 13:
+            excluir_vendedor(session)
         case 0:
             execucao = False
             break
